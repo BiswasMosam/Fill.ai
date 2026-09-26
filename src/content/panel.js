@@ -7,15 +7,12 @@ import { PANEL_HOST_ID, countNew } from './scan.js';
 import { focusHooks } from './fill.js';
 import { escapeHtml as h } from '../shared/text.js';
 
-// Each copy needs its own gradient id: Chrome won't paint a gradient whose
-// <defs> sit inside a hidden element, so a shared id blanks the pill's logo
-// whenever the panel (holding the first copy) is hidden.
-let logoCount = 0;
+// The mark (see scripts/icons.mjs): an ink-blue answer on a field's line,
+// the text cursor just after it. Flat fills, so no gradient ids to clash
+// between the several copies a page holds.
 export function logo(size) {
-  logoCount += 1;
-  const id = `fa-g${logoCount}`;
   const style = size ? ` style="width:${size}px;height:${size}px"` : '';
-  return `<svg viewBox="0 0 24 24" aria-hidden="true"${style}><defs><linearGradient id="${id}" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#a78bfa"/><stop offset="1" stop-color="#3b82f6"/></linearGradient></defs><rect width="24" height="24" rx="7" fill="url(#${id})"/><path d="M14.6 6.4h-1.9a2.6 2.6 0 0 0-2.6 2.6v9.2M7.9 11.6h5.2" stroke="#fff" stroke-width="2.1" stroke-linecap="round" fill="none"/><circle cx="16.6" cy="16.4" r="1.7" fill="#fff"/></svg>`;
+  return `<svg viewBox="0 0 24 24" aria-hidden="true"${style}><rect width="24" height="24" rx="6" fill="#0e0e10"/><rect x="4.5" y="9.5" width="11" height="5" fill="#4f63ff"/><rect x="17" y="8" width="1.8" height="8" fill="#f0efe9"/><rect x="4.5" y="16.8" width="15" height="1.7" fill="#f0efe9"/></svg>`;
 }
 
 const STEPS = [

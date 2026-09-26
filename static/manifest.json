@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Fill.ai",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Learns who you are once, then reads any form and fills it for you. Never submits on its own.",
   "icons": {
     "16": "icons/icon16.png",

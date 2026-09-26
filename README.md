@@ -6,7 +6,7 @@ Job applications, college portals, Google Forms: every one asks the same things 
 
 It runs free on your own computer by default. Nothing about you has to leave it.
 
-![Fill.ai filling a job application with a local model](docs/panel.png)
+![Fill.ai filling a test job application from a made up profile](docs/panel.png)
 
 <sub>Every screenshot here uses a made-up test profile. The one above is a real run of the local model on a laptop GPU.</sub>
 
@@ -115,6 +115,14 @@ Local models and Gemini's free tier cost nothing; the panel shows which model an
 - `src/options/pdf-text.js` turns a resume PDF into text with pdf.js for local models, in the browser. It recovers link targets hidden behind words like "LinkedIn", rejoins letter-spaced capitals ("M O S A M" becomes "MOSAM") and keeps columns apart so a big name beside an email isn't read as one phrase.
 - `src/content/panel.js` is the floating panel, in a closed shadow root so the page can't style, read or click it.
 - `src/options/` is the settings and profile page.
+
+## Look
+
+**Filled in ink.** Fill.ai writes your answers into a form's blanks the way you would with a pen, and only what it can back up. So there is one colour, ink blue (`#4f63ff`), and it always means "Fill.ai wrote this": the outline around a field it filled, its buttons, the answers on the download page. Everything else is flat warm black and bone, with hairlines for blanks.
+
+- **The mark** is a field being filled: an ink answer on the field's line with the text cursor right after it. It is drawn once in `scripts/icons.mjs` (which renders the toolbar icons and `site/favicon.svg`) and again by `logo()` in the panel.
+- **The panel's colours** follow the same rule: filled is ink, *needs you* is amber, drafts are pencil grey, *your call* is pink, and what you typed yourself is green.
+- **The download page** opens on a form that fills itself in ink, each answer with its source number, while the two questions that are yours stay blank with a blinking cursor and Submit is never pressed. It uses the same left rail as [PixelShift](https://www.mosambiswas.com/PixelShift/), with Manrope, Instrument Serif and Space Mono self-hosted in `site/fonts/`.
 
 ## Development
 

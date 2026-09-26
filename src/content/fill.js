@@ -452,7 +452,7 @@ export async function undoMany(ids) {
 
 // ---------------------------------------------------------------- highlights
 
-const COLORS = { fill: '#8b7bff', ask: '#f5b544', draft: '#5cc8ff', sensitive: '#ff7a9a', consent: '#ff7a9a', mine: '#4fd1a5' };
+const COLORS = { fill: '#4f63ff', ask: '#f5b544', draft: '#9b9ba3', sensitive: '#ff7a9a', consent: '#ff7a9a', mine: '#4fd1a5' };
 const marked = new Map(); // element -> original inline styles
 
 function markTarget(item) {

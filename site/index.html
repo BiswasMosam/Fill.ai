@@ -5,77 +5,130 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Fill.ai · Forms, filled by an AI that knows you</title>
   <meta name="description" content="A free Chrome extension that reads your resume once, then fills job applications, college portals and Google Forms for you. Runs on your own computer. Never presses submit.">
-  <meta name="theme-color" content="#0b0b12">
+  <meta name="theme-color" content="#0b0b0d">
   <meta property="og:title" content="Fill.ai · Forms, filled by an AI that knows you">
   <meta property="og:description" content="Teach it once. It fills forms for you. Free, runs on your computer, never submits.">
   <meta property="og:image" content="https://www.mosambiswas.com/Fill.ai/img/panel.png">
   <meta property="og:url" content="https://www.mosambiswas.com/Fill.ai/">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="icon" href="img/icon32.png">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="img/icon32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="img/icon128.png">
+  <link rel="preload" href="fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="style.css">
   <script>document.documentElement.classList.replace('no-js', 'js');</script>
 </head>
 <body>
-  <header class="top">
-    <div class="top-inner">
-      <a class="brand" href="#top" aria-label="Fill.ai home"><img src="img/icon32.png" alt="" width="26" height="26"><span>Fill.ai</span></a>
-      <nav class="nav" aria-label="Sections">
-        <a href="#how">How it works</a>
-        <a href="#install">Install</a>
-        <a href="#ai">The AI</a>
-        <a href="#privacy">Privacy</a>
-        <a href="https://github.com/BiswasMosam/Fill.ai" target="_blank" rel="noopener">GitHub</a>
-      </nav>
-      <a class="btn primary small" href="https://github.com/BiswasMosam/Fill.ai/releases/latest/download/fill-ai.zip">Download</a>
+
+  <!-- The mark and the way around, in a rail down the left edge -->
+  <aside class="rail">
+    <a class="rail__mark" href="#top" aria-label="Fill.ai, back to the top">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4.5" y="9.5" width="11" height="5" fill="var(--pen)"/><rect class="rail__caret" x="17" y="8" width="1.8" height="8" fill="var(--ink)"/><rect x="4.5" y="16.8" width="15" height="1.7" fill="var(--ink)"/></svg>
+    </a>
+    <span class="rail__name">Fill.ai</span>
+    <nav class="rail__nav mono" aria-label="Sections">
+      <a href="#how" title="How it works">01</a>
+      <a href="#install" title="Install">02</a>
+      <a href="#ai" title="The AI">03</a>
+      <a href="#honest" title="Honest by design">04</a>
+      <a href="#privacy" title="Privacy and updates">05</a>
+    </nav>
+    <div class="rail__foot">
+      <a class="rail__dl" href="https://github.com/BiswasMosam/Fill.ai/releases/latest/download/fill-ai.zip" aria-label="Download Fill.ai" title="Download">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11M7 10.5l5 5 5-5M5 20h14"/></svg>
+      </a>
+      <a href="https://github.com/BiswasMosam/Fill.ai" target="_blank" rel="noopener" aria-label="Source code on GitHub" title="Source code">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path class="fill" d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.78 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.84 1.19 3.1 0 4.42-2.7 5.4-5.26 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5Z"/></svg>
+      </a>
+      <a class="rail__me" href="https://www.mosambiswas.com/" title="Made by Mosam Biswas" aria-label="Made by Mosam Biswas">MB</a>
     </div>
-  </header>
+  </aside>
 
   <main id="top">
+
+    <!-- ============ HERO ============ -->
     <section class="hero">
-      <div class="hero-copy">
-        <p class="eyebrow">Free Chrome extension</p>
-        <h1>Teach it once.<br><span class="grad">It fills forms <br class="split">for you.</span></h1>
-        <p class="lede">Fill.ai reads your resume once and remembers you. On any job application, college portal or Google Form, press <span class="keys"><kbd>Alt</kbd> <kbd>Shift</kbd> <kbd>F</kbd></span>. It fills what it knows, asks about what it doesn't, and never presses submit.</p>
-        <div class="cta">
-          <a class="btn primary big" href="https://github.com/BiswasMosam/Fill.ai/releases/latest/download/fill-ai.zip">
-            <span class="dl-icon" aria-hidden="true"></span>
-            <span><strong>Download Fill.ai</strong><small>Version {{VERSION}} · {{SIZE}} zip</small></span>
-          </a>
-          <a class="btn ghost big" href="#install">How to install</a>
-        </div>
-        <p class="browser-note" hidden>Fill.ai works in Chrome, Edge and Brave on a computer. Open this page there to install it.</p>
-        <ul class="trust">
-          <li>Free</li>
-          <li>Runs on your computer</li>
-          <li>Never submits</li>
-          <li>Open source</li>
-        </ul>
+      <div class="hero__top mono">
+        <span>Free Chrome extension</span>
+        <span class="hero__top-mid">Chrome · Edge · Brave</span>
+        <span>Version {{VERSION}}</span>
       </div>
-      <figure class="hero-shot">
-        <img src="img/panel.png" alt="Fill.ai's panel beside a job application it has filled, with four questions left for the person" width="1360" height="900">
-        <figcaption>A real run on a laptop graphics card, with a made up test profile.</figcaption>
+
+      <div class="hero__grid">
+        <div class="hero__copy">
+          <h1>Teach it once.<br>It <em>fills forms</em><br>for you.</h1>
+          <p class="lede">Fill.ai reads your resume once and remembers you. On any job application, college portal or Google Form, press <span class="keys"><kbd>Alt</kbd> <kbd>Shift</kbd> <kbd>F</kbd></span>. It fills what it knows, asks about what it doesn't, and never presses submit.</p>
+          <div class="cta">
+            <a class="btn-ink" href="https://github.com/BiswasMosam/Fill.ai/releases/latest/download/fill-ai.zip">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11M7 10.5l5 5 5-5M5 20h14"/></svg>
+              <span><strong>Download Fill.ai</strong><small>Version {{VERSION}} · {{SIZE}} zip</small></span>
+            </a>
+            <a class="btn-line" href="#install">How to install</a>
+          </div>
+          <p class="browser-note" hidden>Fill.ai works in Chrome, Edge and Brave on a computer. Open this page there to install it.</p>
+          <ul class="trust mono">
+            <li>Free</li>
+            <li>Runs on your computer</li>
+            <li>Never submits</li>
+            <li>Open source</li>
+          </ul>
+        </div>
+
+        <!-- The form fills itself: ink for what Fill.ai writes, each answer
+             with its source; the rest waits, and Submit is never touched. -->
+        <figure class="demo" id="demo" aria-label="An example form, filled by Fill.ai">
+          <div class="demo__head mono">
+            <span>Application form</span>
+            <span>Frontend engineer · Orbit</span>
+          </div>
+          <div class="demo__rows">
+            <div class="f" data-answer="Asha Verma"><span class="f__label">Full name</span><span class="f__val"><span class="ink">Asha Verma</span><sup>1</sup></span></div>
+            <div class="f" data-answer="asha.verma@example.com"><span class="f__label">Email</span><span class="f__val"><span class="ink">asha.verma@example.com</span><sup>2</sup></span></div>
+            <div class="f" data-answer="2026"><span class="f__label">Graduation year</span><span class="f__val"><span class="ink">2026</span><sup>3</sup></span></div>
+            <div class="f" data-answer="Remote, or Pune"><span class="f__label">Where would you work</span><span class="f__val"><span class="ink">Remote, or Pune</span><sup>4</sup></span></div>
+            <div class="f f--wait"><span class="f__label">Notice period</span><span class="f__val"><i class="caret" aria-hidden="true"></i><span class="note">Waits for you</span></span></div>
+            <div class="f f--yours"><span class="f__label">Gender</span><span class="f__val"><span class="note note--yours">Yours to answer</span></span></div>
+          </div>
+          <div class="demo__foot">
+            <span class="submit">Submit</span>
+            <span class="note mono">Never pressed. That part is yours.</span>
+          </div>
+          <ol class="demo__src mono" aria-label="Where each answer came from">
+            <li>Resume, name</li>
+            <li>Resume, contact</li>
+            <li>Resume, education</li>
+            <li>You typed it on a form before</li>
+          </ol>
+          <button class="demo__again mono" type="button">↻ Fill it again</button>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ============ HOW ============ -->
+    <section id="how" class="block">
+      <header class="head" data-reveal>
+        <p class="label mono">(01) · How it works</p>
+        <h2>Four steps, and only <em>the first</em> is work.</h2>
+      </header>
+      <ol class="steps4">
+        <li data-reveal><span class="num mono">01</span><h3>Teach it once</h3><p>Drop in your resume. Add your portfolio or LinkedIn if you like. Fill.ai builds a profile you can read and edit line by line.</p></li>
+        <li data-reveal><span class="num mono">02</span><h3>Open any form</h3><p>Press <span class="keys"><kbd>Alt</kbd> <kbd>Shift</kbd> <kbd>F</kbd></span> or click the icon. A small panel reads every question, even inside embedded frames and Google Forms.</p></li>
+        <li data-reveal><span class="num mono">03</span><h3>It fills what it knows</h3><p>Names, email, phone, links, degree, graduation year, skills, dropdowns and the resume upload.</p></li>
+        <li data-reveal><span class="num mono">04</span><h3>You check, then submit</h3><p>Anything it isn't sure of waits for you. What you type yourself is never changed, and it's remembered for every form after.</p></li>
+      </ol>
+      <figure class="shot" data-reveal>
+        <img src="img/panel.png" alt="Fill.ai's panel beside a job application it has filled, with four questions left for the person" width="1360" height="900" loading="lazy">
+        <figcaption class="mono">The panel on a test job form, filled from a made up profile. Blue outlines mark what Fill.ai filled.</figcaption>
       </figure>
     </section>
 
-    <section id="how" class="block">
-      <div class="head" data-reveal>
-        <p class="eyebrow">How it works</p>
-        <h2>Four steps, and only the first one is work.</h2>
-      </div>
-      <div class="grid4">
-        <article class="card" data-reveal><span class="num">01</span><h3>Teach it once</h3><p>Drop in your resume. Add your portfolio or LinkedIn if you like. Fill.ai builds a profile you can read and edit line by line.</p></article>
-        <article class="card" data-reveal><span class="num">02</span><h3>Open any form</h3><p>Press <span class="keys"><kbd>Alt</kbd> <kbd>Shift</kbd> <kbd>F</kbd></span> or click the icon. A small panel reads every question, even inside embedded frames and Google Forms.</p></article>
-        <article class="card" data-reveal><span class="num">03</span><h3>It fills what it knows</h3><p>Names, email, phone, links, degree, graduation year, skills, dropdowns and the resume upload.</p></article>
-        <article class="card" data-reveal><span class="num">04</span><h3>You check, then submit</h3><p>Anything it isn't sure of waits for you. What you type yourself is never changed, and it's remembered for every form after.</p></article>
-      </div>
-    </section>
-
+    <!-- ============ INSTALL ============ -->
     <section id="install" class="block">
-      <div class="head" data-reveal>
-        <p class="eyebrow">Install</p>
-        <h2>Two minutes, once.</h2>
+      <header class="head" data-reveal>
+        <p class="label mono">(02) · Install</p>
+        <h2>Two minutes, <em>once</em>.</h2>
         <p class="sub">Fill.ai isn't on the Chrome Web Store yet, so Chrome needs you to load it by hand. You only do this once.</p>
-      </div>
+      </header>
       <div class="install">
         <ol class="steps">
           <li data-reveal>
@@ -102,20 +155,21 @@
         </ol>
         <figure class="shot" data-reveal>
           <img src="img/settings.png" alt="Fill.ai settings, choosing the AI that runs on this computer" width="1360" height="900" loading="lazy">
-          <figcaption>In Edge the page is <code>edge://extensions</code> and the switch sits on the left.</figcaption>
+          <figcaption class="mono">In Edge the page is <code>edge://extensions</code> and the switch sits on the left.</figcaption>
         </figure>
       </div>
     </section>
 
+    <!-- ============ THE AI ============ -->
     <section id="ai" class="block">
-      <div class="head" data-reveal>
-        <p class="eyebrow">The AI</p>
-        <h2>Two of the three are free.</h2>
+      <header class="head" data-reveal>
+        <p class="label mono">(03) · The AI</p>
+        <h2>Two of the three are <em>free</em>.</h2>
         <p class="sub">Pick one in settings and switch whenever you like. Your profile stays either way.</p>
-      </div>
-      <div class="grid3">
-        <article class="card ai" data-reveal>
-          <div class="ai-top"><h3>On this computer</h3><span class="tag free">Free · private</span></div>
+      </header>
+      <div class="options">
+        <article class="option" data-reveal>
+          <div class="option__top"><span class="radio radio--on" aria-hidden="true"></span><h3>On this computer</h3><span class="tag tag--free mono">Free · private</span></div>
           <p>A model runs on your own graphics card through Ollama. Nothing about you leaves your computer.</p>
           <ol class="mini">
             <li>Install Ollama from <a href="https://ollama.com/download" target="_blank" rel="noopener">ollama.com</a>.</li>
@@ -125,17 +179,17 @@
           </ol>
           <p class="fine">Fill.ai finds it by itself. About 30 to 50 seconds a form on a laptop GPU.</p>
         </article>
-        <article class="card ai" data-reveal>
-          <div class="ai-top"><h3>Gemini</h3><span class="tag free">Free tier</span></div>
+        <article class="option" data-reveal>
+          <div class="option__top"><span class="radio" aria-hidden="true"></span><h3>Gemini</h3><span class="tag tag--free mono">Free tier</span></div>
           <p>Google's AI with a free key. Works on any laptop, no graphics card needed.</p>
           <ol class="mini">
             <li>Get a key at <a href="https://aistudio.google.com/apikey" target="_blank" rel="noopener">aistudio.google.com</a>. No card needed.</li>
             <li>Paste it into Fill.ai's settings.</li>
           </ol>
-          <p class="note">On the free tier, Google may use what you send, your resume included, to improve its products.</p>
+          <p class="note-warn">On the free tier, Google may use what you send, your resume included, to improve its products.</p>
         </article>
-        <article class="card ai" data-reveal>
-          <div class="ai-top"><h3>Claude</h3><span class="tag paid">Paid</span></div>
+        <article class="option" data-reveal>
+          <div class="option__top"><span class="radio" aria-hidden="true"></span><h3>Claude</h3><span class="tag tag--paid mono">Paid</span></div>
           <p>Claude Opus 5 with your own Anthropic key. The most careful answers, a few cents a form.</p>
           <ol class="mini">
             <li>Get a key at <a href="https://console.anthropic.com/settings/keys" target="_blank" rel="noopener">console.anthropic.com</a>.</li>
@@ -146,31 +200,33 @@
       </div>
     </section>
 
+    <!-- ============ HONEST ============ -->
     <section id="honest" class="block">
-      <div class="head" data-reveal>
-        <p class="eyebrow">Honest by design</p>
-        <h2>It never makes things up.</h2>
+      <header class="head" data-reveal>
+        <p class="label mono">(04) · Honest by design</p>
+        <h2>It never <em>makes things up</em>.</h2>
         <p class="sub">An AI that fills forms is only useful if you can trust it. Fill.ai checks every answer in code before it touches the page, whichever AI gave it.</p>
-      </div>
-      <div class="grid3 rules">
-        <div class="rule" data-reveal><h3>Every answer cites your profile</h3><p>No source, no fill. The field waits for you instead.</p></div>
-        <div class="rule" data-reveal><h3>Facts are checked</h3><p>Emails and phone numbers must match yours exactly, and choices must be real options.</p></div>
-        <div class="rule" data-reveal><h3>Personal questions stay yours</h3><p>Gender, caste, religion, disability and ID numbers are never filled on their own.</p></div>
-        <div class="rule" data-reveal><h3>Agreements stay yours</h3><p>Terms, privacy policies and "I certify" boxes are never ticked for you.</p></div>
-        <div class="rule" data-reveal><h3>Secrets are never read</h3><p>Passwords, OTPs, captchas and card details are skipped before anything is sent.</p></div>
-        <div class="rule" data-reveal><h3>It never submits</h3><p>You check the form. You press submit.</p></div>
-      </div>
+      </header>
+      <ul class="rules">
+        <li data-reveal><h3>Every answer cites your profile</h3><p>No source, no fill. The field waits for you instead.</p></li>
+        <li data-reveal><h3>Facts are checked</h3><p>Emails and phone numbers must match yours exactly, and choices must be real options.</p></li>
+        <li data-reveal><h3>Personal questions stay yours</h3><p>Gender, caste, religion, disability and ID numbers are never filled on their own.</p></li>
+        <li data-reveal><h3>Agreements stay yours</h3><p>Terms, privacy policies and "I certify" boxes are never ticked for you.</p></li>
+        <li data-reveal><h3>Secrets are never read</h3><p>Passwords, OTPs, captchas and card details are skipped before anything is sent.</p></li>
+        <li data-reveal><h3>It never submits</h3><p>You check the form. You press submit.</p></li>
+      </ul>
     </section>
 
+    <!-- ============ PRIVACY + UPDATING ============ -->
     <section id="privacy" class="block two">
-      <div class="card" data-reveal>
-        <p class="eyebrow">Privacy</p>
-        <h2>Your data stays yours.</h2>
+      <div data-reveal>
+        <p class="label mono">(05) · Privacy</p>
+        <h2>Your data stays <em>yours</em>.</h2>
         <p>Your profile, saved answers and keys live in your browser. When a form is filled, its questions and your profile go only to the AI you chose: nowhere at all on your computer, to Google with Gemini, to Anthropic with Claude.</p>
         <p>No accounts, no analytics, and no server of mine in between.</p>
       </div>
-      <div class="card" data-reveal id="update">
-        <p class="eyebrow">Updating</p>
+      <div data-reveal id="update">
+        <p class="label mono">Updating</p>
         <h2>When a new version is out.</h2>
         <ol class="mini">
           <li>Download the zip again.</li>
@@ -182,15 +238,15 @@
     </section>
 
     <section class="final" data-reveal>
-      <h2>Ready when you are.</h2>
-      <a class="btn primary big" href="https://github.com/BiswasMosam/Fill.ai/releases/latest/download/fill-ai.zip">
-        <span class="dl-icon" aria-hidden="true"></span>
+      <h2>Ready when <em>you</em> are.</h2>
+      <a class="btn-ink btn-ink--big" href="https://github.com/BiswasMosam/Fill.ai/releases/latest/download/fill-ai.zip">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11M7 10.5l5 5 5-5M5 20h14"/></svg>
         <span><strong>Download Fill.ai</strong><small>Version {{VERSION}} · {{SIZE}} zip</small></span>
       </a>
     </section>
   </main>
 
-  <footer class="foot">
+  <footer class="foot mono">
     <span>Made by <a href="https://www.mosambiswas.com/">Mosam Biswas</a></span>
     <span><a href="https://github.com/BiswasMosam/Fill.ai" target="_blank" rel="noopener">Source on GitHub</a></span>
     <span>MIT licence · version {{VERSION}}</span>
