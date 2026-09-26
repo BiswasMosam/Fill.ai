@@ -82,6 +82,7 @@ if (!reduced && 'IntersectionObserver' in window) {
   document.addEventListener('keydown', (e) => {
     if (e.altKey && e.shiftKey && e.code === 'KeyF') {
       e.preventDefault();
+      if (window.eggs) window.eggs.find('fillai');
       demo.scrollIntoView({ behavior: 'smooth', block: 'center' });
       fillDemo();
     }
