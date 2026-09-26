@@ -91,6 +91,15 @@ if (!reduced && 'IntersectionObserver' in window) {
   rows.forEach((row) => row.classList.add('is-filled'));
 }
 
+// With Fill.ai installed, Chrome hands Alt+Shift+F to the extension and this
+// page never hears the keys, so the easter egg could never be found by the
+// people who actually use it. The extension's panel does arrive in this page,
+// though (as #fillai-root, see src/content/panel.js), and that counts too.
+new MutationObserver((records) => {
+  const opened = records.some((r) => [...r.addedNodes].some((n) => n.id === 'fillai-root'));
+  if (opened && window.eggs) window.eggs.find('fillai');
+}).observe(document.documentElement, { childList: true });
+
 // ------------------------------------------------------ rail: you are here
 
 const links = [...document.querySelectorAll('.rail__nav a')];
