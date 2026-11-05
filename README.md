@@ -1,5 +1,7 @@
 # Fill.ai
 
+[![Tests](https://github.com/BiswasMosam/Fill.ai/actions/workflows/tests.yml/badge.svg)](https://github.com/BiswasMosam/Fill.ai/actions/workflows/tests.yml) [![Publish](https://github.com/BiswasMosam/Fill.ai/actions/workflows/publish.yml/badge.svg)](https://github.com/BiswasMosam/Fill.ai/actions/workflows/publish.yml)
+
 **Forms, filled by an AI that actually knows you.**
 
 Job applications, college portals, Google Forms: every one asks the same things in a slightly different layout. Fill.ai reads your resume once, remembers you, and from then on fills forms for you. It fills what it knows, asks you about what it doesn't, and never presses submit.
@@ -140,6 +142,8 @@ node build.mjs --test && node test/e2e/live-probe.mjs <url>          # a real si
 node build.mjs --test && node test/e2e/real-ollama.mjs [model]        # the fixture form, your real local model
 node build.mjs --test && node test/e2e/real-profile.mjs <resume.pdf>  # a real resume, your real local model
 ```
+
+GitHub runs both suites, unit and end-to-end, on every push (`.github/workflows/tests.yml`), so the latest result is always [public](https://github.com/BiswasMosam/Fill.ai/actions/workflows/tests.yml).
 
 The end-to-end suite runs 121 checks against the real extension: a job application with a React-style controlled input, a cross-origin iframe, hidden trap fields, a Google Forms style form with a second page and a dropdown built like Google's real one, a careers page on real Select2 4.0 (a box set by the site, a city list that loads after the country, a list that only appears as you type, a multi-select) and a real jQuery Mask date field, answers typed by hand before Fill.ai opens being kept, remembered, forgotten and reused, the same form answered by Gemini and by Claude, the settings page finding Ollama past its extension block and building a profile from a real PDF, switching providers, upgrading from v0.1, dragging and shrinking the panel, undo, *Save & fill* and saved answers being reused. The mock answers for all three APIs and deliberately invents one answer, and the suite checks that it is thrown out. Its Ollama rejects extension origins just like the real one.
 

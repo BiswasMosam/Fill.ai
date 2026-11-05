@@ -1,0 +1,26 @@
+# Every push and pull request: the unit tests, then the full end-to-end suite,
+# which loads the real extension into Chrome and drives it against a mock of
+# all three AIs (no keys, no Ollama, nothing leaves the runner).
+name: Tests
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      - run: npm test
+      # Ubuntu 24.04 blocks the user namespaces Chrome's sandbox needs.
+      - run: sudo sysctl -w kernel.apparmor_restrict_unprivileged_userns=0
+      - run: npm run e2e
